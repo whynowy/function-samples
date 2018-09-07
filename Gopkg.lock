@@ -2,10 +2,9 @@
 
 
 [[projects]]
-  digest = "1:03cd9028d2d608a6f3d7cd9fe767e757ae22702897ae73ff75db128d735c47d9"
+  digest = "1:70cff5380a5f9ff6f7659ceb84e08cf29c7e173947995e188043d41cb91db216"
   name = "github.com/aws/aws-sdk-go"
   packages = [
-    ".",
     "aws",
     "aws/awserr",
     "aws/awsutil",
@@ -36,11 +35,20 @@
     "private/protocol/restxml",
     "private/protocol/xml/xmlutil",
     "service/s3",
+    "service/sqs",
     "service/sts",
   ]
   pruneopts = "UT"
   revision = "3e9c4ca8d7fc8d22f0d21d50120186f73d2fdf1a"
   version = "v1.15.27"
+
+[[projects]]
+  digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  pruneopts = "UT"
+  revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
+  version = "v1.1.1"
 
 [[projects]]
   digest = "1:5abd6a22805b1919f6a6bca0ae58b13cef1f3412812f38569978f43ef02743d4"
@@ -57,15 +65,24 @@
   pruneopts = "UT"
   revision = "0b12d6b5"
 
+[[projects]]
+  branch = "master"
+  digest = "1:5aa5c72fe66c300c53df44d2a84b5d56b061a4f061ebe4ca8a922fe5bcb300f6"
+  name = "github.com/knative/eventing"
+  packages = ["pkg/event"]
+  pruneopts = "UT"
+  revision = "e6fb7df8f1b83b6e78f6639f7f7461ee75a9b196"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/aws/aws-sdk-go",
     "github.com/aws/aws-sdk-go/aws",
     "github.com/aws/aws-sdk-go/aws/credentials/stscreds",
     "github.com/aws/aws-sdk-go/aws/session",
     "github.com/aws/aws-sdk-go/service/s3",
+    "github.com/aws/aws-sdk-go/service/sqs",
+    "github.com/knative/eventing/pkg/event",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
